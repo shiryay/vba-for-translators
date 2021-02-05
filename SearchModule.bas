@@ -1,67 +1,72 @@
 Attribute VB_Name = "SearchModule"
 Sub Google()
-    search_flag = "Google"
-    Search (search_flag)
+    Search_flag = "Google"
+    Search (Search_flag)
 End Sub
 
 Sub LingueeDe()
-    search_flag = "LingueeDeEn"
-    Search (search_flag)
+    Search_flag = "LingueeDeEn"
+    Search (Search_flag)
 End Sub
 
 Sub LingueeRu()
-    search_flag = "LingueeRuEn"
-    Search (search_flag)
+    Search_flag = "LingueeRuEn"
+    Search (Search_flag)
 End Sub
 
 Sub LingueeEs()
-    search_flag = "LingueeEsEn"
-    Search (search_flag)
+    Search_flag = "LingueeEsEn"
+    Search (Search_flag)
 End Sub
 
 Sub LingueeFr()
-    search_flag = "LingueeFrEn"
-    Search (search_flag)
+    Search_flag = "LingueeFrEn"
+    Search (Search_flag)
 End Sub
 
 Sub GoogleTranslate()
-    search_flag = "GoogleTr"
-    Search (search_flag)
+    Search_flag = "GoogleTr"
+    Search (Search_flag)
 End Sub
 
 Sub SearchProz()
-    search_flag = "Proz"
-    Search (search_flag)
+    Search_flag = "Proz"
+    Search (Search_flag)
 End Sub
 
 Sub SearchInsurinfo()
-    search_flag = "Insur"
-    Search (search_flag)
+    Search_flag = "Insur"
+    Search (Search_flag)
 End Sub
 
 Sub SearchColloc()
-    search_flag = "Colloc"
-    Search (search_flag)
+    Search_flag = "Colloc"
+    Search (Search_flag)
 End Sub
 
 Sub SearchMultitran()
-    search_flag = "Multitran"
-    Search (search_flag)
+    Search_flag = "Multitran"
+    Search (Search_flag)
 End Sub
 
 Sub Abkuerzungen()
-    search_flag = "Abkuerzungen"
-    Search (search_flag)
+    Search_flag = "Abkuerzungen"
+    Search (Search_flag)
 End Sub
 
 Sub Acronymfinder()
-    search_flag = "Acronymfinder"
-    Search (search_flag)
+    Search_flag = "Acronymfinder"
+    Search (Search_flag)
 End Sub
 
 Sub Wox()
-    search_flag = "Wox"
-    Search (search_flag)
+    Search_flag = "Wox"
+    Search (Search_flag)
+End Sub
+
+Sub Sokr()
+    Search_flag = "Sokr"
+    Search (Search_flag)
 End Sub
 
 Private Function selected()
@@ -105,6 +110,7 @@ Public Function Search(ByVal flag As String)
     urls.Add "Abkuerzungen", "http://abkuerzungen.de/result.php?searchterm={query}&language=de"
     urls.Add "Acronymfinder", "https://www.acronymfinder.com/{query}.html"
     urls.Add "Wox", "https://abkuerzungen.woxikon.de/abkuerzung/{query}.php"
+    urls.Add "Sokr", "http://sokr.ru/{query}/"
 
     If selected = 1 Then
         arg = Replace(Selection.Text, vbNewLine, "", , , vbTextCompare) 'new line stripping
