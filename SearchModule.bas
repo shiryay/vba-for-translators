@@ -59,6 +59,11 @@ Sub Acronymfinder()
     Search (search_flag)
 End Sub
 
+Sub Wox()
+    search_flag = "Wox"
+    Search (search_flag)
+End Sub
+
 Private Function selected()
    If WordBasic.GetSelStartPos() = WordBasic.GetSelEndPos() Then
         selected = 0
@@ -99,6 +104,7 @@ Public Function Search(ByVal flag As String)
     urls.Add "Multitran", "https://www.multitran.com/c/m.exe?CL=1&s={query}&l1=1&l2=2"
     urls.Add "Abkuerzungen", "http://abkuerzungen.de/result.php?searchterm={query}&language=de"
     urls.Add "Acronymfinder", "https://www.acronymfinder.com/{query}.html"
+    urls.Add "Wox", "https://abkuerzungen.woxikon.de/abkuerzung/{query}.php"
 
     If selected = 1 Then
         arg = Replace(Selection.Text, vbNewLine, "", , , vbTextCompare) 'new line stripping
