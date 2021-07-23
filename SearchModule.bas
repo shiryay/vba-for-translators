@@ -1,6 +1,10 @@
-Attribute VB_Name = "SearchModule"
 Sub Google()
     Search_flag = "Google"
+    Search (Search_flag)
+End Sub
+
+Sub GoogleBooks()
+    Search_flag = "GoogleBooks"
     Search (Search_flag)
 End Sub
 
@@ -98,6 +102,7 @@ Public Function Search(ByVal flag As String)
     Set urls = CreateObject("Scripting.Dictionary")
     
     urls.Add "Google", "https://www.google.ru/search?q=%22{query}%22"
+    urls.Add "GoogleBooks", "https://www.google.com/search?tbm=bks&q=%22{query}%22"
     urls.Add "GoogleTr", "https://translate.google.ru/?sl=auto&tl=en&text={query}&op=translate&hl=en"
     urls.Add "LingueeDeEn", "https://www.linguee.de/deutsch-englisch/search?source=auto&query=%22{query}%22"
     urls.Add "LingueeRuEn", "https://www.linguee.ru/russian-english/search?source=auto&query={query}"
@@ -131,4 +136,3 @@ Public Function Search(ByVal flag As String)
     ActiveDocument.FollowHyperlink Address:=url
 
 End Function
-
